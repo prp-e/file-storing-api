@@ -22,4 +22,13 @@ get '/:temperature/:humidity' do
  temp_change.close() 
 
  'successfully written to the file' 
+
+end 
+
+get '/data' do 
+
+ content_type :json 
+ json_file = File.open("data.json", "rb") 
+ "#{json_file.readline()}" 
+
 end 
